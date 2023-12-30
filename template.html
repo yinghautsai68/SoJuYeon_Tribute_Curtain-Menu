@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Template</title>
+        <link rel="stylesheet" href="template.css">
+        <script src="main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Need for @media screen; responsive design-->
+    </head>
+    <body data-nav="false">
+        <button id="circle" type="button" onclick="toggleNav()"></button>
+       
+        <main>
+            <div id="main_div">
+                <div class="column">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/hug_dog.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/warm_bag.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/awkward_laugh_small.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/closeup.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/gigachad.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/smile_at_camera.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/mcdo_hair.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/what.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/awkward_laugh_small.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/eating_outside.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/cozy_smile.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/ice_cream.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/smile_at_camera.jpg" alt="">
+                    <img class="main_img" id="" src="imgs/Pictures_SoJuYeon/bucket-hat.jpg" alt="">
+                </div>
+                <div id="title">
+                    <span id="tribute">Tribute</span><span id="name">蘇珠妍</span>
+                </div>
+            </div>
+          
+        </main>
+
+        <nav>
+            <div id="nav-links">
+                <a href="" class="nav-link">
+                    <h2 class="nav-link-label">Home</h2>
+                    <img class="nav-link-image" id="home" src="imgs/Pictures_SoJuYeon/photoshoot_flower.jpg" alt="" class="nav-link-image">
+                </a>
+                <a href="" class="nav-link">
+                    <h2 class="nav-link-label">Gallery</h2>
+                    <img class="nav-link-image" id="gallery" src="imgs/Pictures_SoJuYeon/photoshoot_bicycle.jpg" alt="" class="nav-link-image">
+                </a>
+                <a href="" class="nav-link">
+                    <h2 class="nav-link-label">About</h2>
+                    <img class="nav-link-image" id="about" src="imgs/Pictures_SoJuYeon/thinking.jpg" alt="" class="nav-link-image">
+                </a>
+                <a href="" class="nav-link">
+                    <h2 class="nav-link-label">Contact</h2>
+                    <img class="nav-link-image" src="imgs/Pictures_SoJuYeon/thumb_bite.jpg" alt="" class="nav-link-image">
+                </a>
+            </div>
+        </nav>
+
+        <script>
+            const toggleNav = () =>{
+                document.body.dataset.nav = document.body.dataset.nav === "false" ? "true" : "false";
+            }
+        </script>
+    </body>
+</html>

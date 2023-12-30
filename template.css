@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*-----Main-----*/
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;   
+}
+#title{
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 20px;
+}
+#name{
+    font-size: 5vw;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 8px 10px 0px black;
+}
+#tribute{
+    font-size: 5vw;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 8px 10px 0px black;
+    text-transform: uppercase;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    transition: 500ms;
+}
+#main_div{
+    /*Position*/
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%; /*fix for gallery exposing black*/
+    overflow-y: auto; /*fix for gallery exposing black*/
+    /*Design*/
+
+}
+#main_div::-webkit-scrollbar{
+    display: none;
+}
+.column{
+    width: 25%;    
+}
+.main_img{
+    border-style: solid;
+    width: 100%;
+    vertical-align: middle;
+    
+
+    animation-name: popUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    transition:0.3s;
+}
+.main_img:hover{
+
+}
+.animation{
+    animation-name: popUp, large;
+    animation-duration: 1s;
+}
+#circle{
+    position: fixed;
+    z-index: 3;
+    bottom: 15%;
+    left: 0;/*for center*/
+    right: 0; /*for center*/
+    margin-left: auto;  /*for center*/
+    margin-right: auto;  /*for center*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 201, 119);
+    transition: 500ms;
+}
+#circle:hover{
+    transform: scale(120%); 
+}
+body[data-nav="true"] > main{
+    transform: translateY(-50%);
+    
+}
+body[data-nav="true"] > #circle{
+    background-color:aquamarine;
+    
+}
+@media screen and (min-width: 800px) {
+    .column {
+      -ms-flex: 250%;
+      flex: 25%;
+      max-width: 25%;
+      width: 25px;
+    height: 25px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+  }
+  #circle{
+    width: 25px;
+    height: 25px;
+  }
+}
+
+  
+/*-----Footer-----*/
+nav{
+   position: absolute;
+   z-index: 1;
+   width: 100%;
+   height: 50vh;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+nav::-webkit-scrollbar{
+    display: none;  /* Google */
+}
+#nav-links{
+    display: flex;
+    gap: clamp(1rem,2vw,2rem);
+    margin-top: clamp(2rem,2vw,3rem);
+    padding: 0rem clamp(1rem,2vw,2rem);
+    transform: translateY(70%) scale(0.9);
+    transition: 500ms;
+}
+#nav-links > .nav-link{
+    text-decoration: none;
+}
+#nav-links > .nav-link > .nav-link-label{
+    color: white;
+    font-size: 1.25rem;
+    margin: 0rem;
+    text-transform: uppercase;
+}
+
+#nav-links > .nav-link> .nav-link-image{
+    width: max(20vw, 400px);
+    aspect-ratio: 1.8/1;
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    object-fit: cover;
+}
+#gallery{
+    object-position: 0px -150px;
+}
+#about{
+    object-position: 0px -180px;
+}
+
+body[data-nav="true"] > nav > #nav-links{
+    transform: translateY(0%) scale(1);
+}
+
+/*-----Animation-----*/
+@keyframes popUp{
+    0%{
+        scale: 0%;
+    }
+    60%{
+        scale: 100%;
+    }
+    70%{
+        scale: 105%;
+    }
+    80%{
+        scale: 110%;
+    }
+    90%{
+        scale: 105%;
+    }
+    100%{
+        scale: 100%;
+    }
+}
+@keyframes large{
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
